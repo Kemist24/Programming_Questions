@@ -64,14 +64,14 @@ class Solution
         int n = 1000000007;
         while(b>0)
         {
-            if((b&1) != 0)
+            if((b&1) != 0) // effcient way to check for odd number
             {
-                res = (res*a%n)%n;
+                res = (res*a%n)%n; // we performed res = res*a using property of modulous : ((that is [(a*b) % n = (a%n * b%n) % n])
             }
             a = (a % n*a % n)%n;
-            b = b>>1;
+            b = b>>1; // efficient way to perform b/2
         }
-        return res;
+        return res; 
         
     }
 
