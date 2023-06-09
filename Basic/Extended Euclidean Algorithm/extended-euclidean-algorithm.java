@@ -27,13 +27,13 @@ class GFG
 //User function Template for Java
 class Solution{
     static int[] gcd(int a,int b){
-        if(a == 0) {
-            return new int[]{b, 0, 1};
+        if(b == 0) {
+            return new int[]{a, 1, 0};
         }
-        int g[] = gcd(b%a, a);
+        int g[] = gcd(b, a%b);
         int gcd=g[0], x1=g[1], y1=g[2];
-        int x=y1-(b/a)*x1;
-        int y=x1;
+        int x=y1;
+        int y=x1-(a/b)*y1;
         return new int[]{gcd, x, y};
     }
 }
