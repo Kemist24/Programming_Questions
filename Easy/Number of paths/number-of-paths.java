@@ -27,12 +27,12 @@ class GfG {
 class Solution{
     
     long numberOfPaths(int m, int n) {
-        if(m ==1 || n== 1)
+        if(m ==1 || n== 1) // this is the base condition as when we reach the bottom of the matrix(m=1) we can only go right so only one path possible same as when we reach top right(n=1) of the matrix we can only go down so only one path possible
         {
             return 1;
         }
         
-        return numberOfPaths(m-1, n) + numberOfPaths(m, n-1);
+        return numberOfPaths(m-1, n) + numberOfPaths(m, n-1); // we keep on decreasing the m and n respectively to recursively get our answer.
     }
     
 }
