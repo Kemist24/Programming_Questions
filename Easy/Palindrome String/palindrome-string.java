@@ -24,13 +24,19 @@ class GFG {
 
 class Solution {
     int isPalindrome(String S) {
-        for(int i=0; i<S.length()/2; i++)
+        return recursion(S, 0, S.length()-1);
+    }
+    
+    static int recursion(String S, int l, int r)
+    {
+        if(l>=r)
         {
-            if ( S.charAt(i) != S.charAt(S.length()-1-i))
-            {
-                return 0;
-            }
+            return 1;
         }
-        return 1;
+        if(S.charAt(l) != S.charAt(r))
+        {
+            return 0;
+        }
+        return recursion(S, l+1, r-1);
     }
 };
