@@ -1,13 +1,14 @@
 class Solution {
-    public int[][] transpose(int[][] arr) {
-        int transposeArr[][] = new int[arr[0].length][arr.length];
-        for(int i=0; i<arr.length; i++)
+    public int[][] transpose(int[][] matrix) {
+        int m = matrix[0].length,n=matrix.length;
+        int[][] tm = new int[m][n];
+        for(int i=0;i<m;i++)
         {
-            for(int j=0; j<arr[0].length; j++)
+            for(int j=0;j<n;j++) 
             {
-                transposeArr[j][i] = arr[i][j];
+                tm[i][j] = matrix[j][i];
             }
         }
-        return transposeArr;
+        return tm;
     }
 }
