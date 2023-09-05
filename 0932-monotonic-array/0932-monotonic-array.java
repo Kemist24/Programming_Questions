@@ -1,21 +1,21 @@
 class Solution {
 
-    public static boolean dec(int nums[])
+    public static boolean dec(ArrayList<Integer> list)
     {
-        for(int i =0; i<nums.length-1; i++)
+        for(int i =0; i<list.size()-1; i++)
         {
-            if(nums[i]<nums[i+1])
+            if(list.get(i)<list.get(i+1))
             {
                 return false;
             }
         }
         return true;
     }
-    public static boolean inc(int nums[])
+    public static boolean inc(ArrayList<Integer> list)
     {
-        for(int i =0; i<nums.length-1; i++)
+        for(int i =0; i<list.size()-1; i++)
         {
-            if(nums[i]>nums[i+1])
+            if(list.get(i)>list.get(i+1))
             {
                 return false;
             }
@@ -26,6 +26,16 @@ class Solution {
 
 
     public boolean isMonotonic(int[] nums) {
-       return inc(nums) || dec(nums);
+       
+
+        
+
+         ArrayList<Integer> list = new ArrayList<>();
+        for (int value : nums) {
+            list.add(value);
+        }
+
+        
+       return inc(list) || dec(list);
     }
 }
